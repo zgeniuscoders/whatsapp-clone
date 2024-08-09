@@ -1,4 +1,4 @@
-package cd.ketsiatshaba.whatsapp.common.views
+package cd.ketsiatshaba.whatsapp.common.views.ui
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -28,6 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cd.ketsiatshaba.whatsapp.R
+import cd.ketsiatshaba.whatsapp.common.views.Colors
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
