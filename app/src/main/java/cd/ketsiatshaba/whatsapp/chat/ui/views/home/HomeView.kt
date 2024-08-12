@@ -18,6 +18,7 @@ import androidx.compose.material.icons.outlined.Archive
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -80,7 +81,8 @@ fun ArchiveSection() {
         Spacer(modifier = Modifier.weight(1f))
         Text(
             "12",
-            color = Colors.LightGreen
+            color = Colors.LightGreen,
+            style = MaterialTheme.typography.bodySmall
         )
     }
 }
@@ -98,7 +100,7 @@ fun ChatItem(chat: Chat) {
         Image(
             painter = painterResource(id = R.drawable.image),
             contentDescription = "",
-            modifier = Modifier.size(60.dp)
+            modifier = Modifier.size(50.dp)
         )
         Column {
             Row(

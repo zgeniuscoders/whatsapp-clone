@@ -12,11 +12,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import cd.ketsiatshaba.whatsapp.actus.ui.views.actus_lists.ActusListsView
 import cd.ketsiatshaba.whatsapp.chat.ui.views.home.HomeView
 import cd.ketsiatshaba.whatsapp.common.Routes
 import cd.ketsiatshaba.whatsapp.common.views.Colors
@@ -50,7 +52,7 @@ fun RoutePage(navHostController: NavHostController) {
         },
         bottomBar = {
             if (currentRoute in pageToShowBottomBar) {
-                WhatsappBottomBar()
+                WhatsappBottomBar(navHostController)
             }
         },
         floatingActionButton = {
@@ -69,7 +71,7 @@ fun RoutePage(navHostController: NavHostController) {
         }
     ) { innerP ->
         Column(
-            modifier = Modifier.padding(innerP)
+            modifier = Modifier.padding(vertical = innerP.calculateTopPadding(), horizontal = 15.dp)
         ) {
             NavHost(
                 navController = navHostController,
@@ -80,6 +82,9 @@ fun RoutePage(navHostController: NavHostController) {
                 }
                 composable(route = Routes.home_page.route) {
                     HomeView(navHostController)
+                }
+                composable(route = Routes.actus_page.route) {
+                    ActusListsView(navHostController)
                 }
             }
         }

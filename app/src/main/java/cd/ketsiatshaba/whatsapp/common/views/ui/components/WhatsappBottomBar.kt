@@ -21,31 +21,37 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.navigation.NavHostController
+import cd.ketsiatshaba.whatsapp.common.Routes
 import cd.ketsiatshaba.whatsapp.common.views.Colors
 
 @SuppressLint("AutoboxingStateCreation")
 @Composable
-fun WhatsappBottomBar() {
+fun WhatsappBottomBar(navHostController: NavHostController) {
     val items = listOf(
         BottomItem(
             title = "Chats",
             selectedIcon = Icons.AutoMirrored.Rounded.Chat,
-            unselectedIcon = Icons.AutoMirrored.Outlined.Chat
+            unselectedIcon = Icons.AutoMirrored.Outlined.Chat,
+            routes = Routes.home_page.route
         ),
         BottomItem(
             title = "Actus",
             selectedIcon = Icons.Rounded.Autorenew,
-            unselectedIcon = Icons.Outlined.Autorenew
+            unselectedIcon = Icons.Outlined.Autorenew,
+            routes = Routes.actus_page.route
         ),
         BottomItem(
             title = "Communautes",
             selectedIcon = Icons.Rounded.Groups,
-            unselectedIcon = Icons.Outlined.Groups
+            unselectedIcon = Icons.Outlined.Groups,
+            routes = Routes.home_page.route
         ),
         BottomItem(
             title = "Appels",
             selectedIcon = Icons.Rounded.Call,
-            unselectedIcon = Icons.Outlined.Call
+            unselectedIcon = Icons.Outlined.Call,
+            routes = Routes.home_page.route
         )
     )
     var selectedItem by remember {
@@ -58,6 +64,7 @@ fun WhatsappBottomBar() {
                 selected = selectedItem == index,
                 onClick = {
                     selectedItem = index
+                    navHostController.navigate(bottomItem.routes)
                 },
                 colors = NavigationBarItemDefaults.colors(
                     indicatorColor = Colors.LightGreen
@@ -79,5 +86,6 @@ fun WhatsappBottomBar() {
 data class BottomItem(
     var title: String,
     var selectedIcon: ImageVector,
-    var unselectedIcon: ImageVector
+    var unselectedIcon: ImageVector,
+    var routes: String
 )

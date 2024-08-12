@@ -12,4 +12,5 @@ object Colors{
 
     val Teal40 = Color(0xFF128C7E)
     val Purple40 = Color(0xFF6650a4)
+    val gray = Color(0xFFCCCCCC)
 }
