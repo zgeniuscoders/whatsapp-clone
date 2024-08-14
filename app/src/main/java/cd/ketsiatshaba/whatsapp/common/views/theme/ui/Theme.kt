@@ -1,6 +1,5 @@
-package cd.ketsiatshaba.whatsapp.ui.theme
+package cd.ketsiatshaba.whatsapp.common.views.theme.ui
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

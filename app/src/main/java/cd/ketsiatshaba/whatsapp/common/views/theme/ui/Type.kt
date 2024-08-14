@@ -1,4 +1,4 @@
-package cd.ketsiatshaba.whatsapp.ui.theme
+package cd.ketsiatshaba.whatsapp.common.views.theme.ui
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
